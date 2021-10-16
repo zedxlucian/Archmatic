@@ -208,6 +208,7 @@ then
     cp /etc/skel/.bash_logout /home/$username/
     cp /etc/skel/.bashrc /home/$username/
     chown -R $username: /home/$username
+    echo "setxkbmap fr" >> /usr/share/sddm/scripts/Xsetup
     su - $username
     echo "Switched to user mode"
     echo "--------------------------------------"
