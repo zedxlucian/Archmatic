@@ -13,13 +13,9 @@ echo -e "\nINSTALLING AUR SOFTWARE\n"
 echo "CLONING: YAY"
 cd ~
 git clone "https://aur.archlinux.org/yay.git"
-cd ${HOME}/yay
+cd "${HOME}/yay"
 makepkg -si --noconfirm
 cd ~
-touch "$HOME/.cache/zshhistory"
-git clone "https://github.com/ChrisTitusTech/zsh"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
-ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
 
 PKGS=(
 'brave-bin' # Brave Browser
@@ -31,8 +27,7 @@ PKGS=(
 'mangohud-common'
 'ocs-url' # install packages from websites
 'timeshift-bin'
-'ttf-meslo' # Nerdfont package
-'zoom' # video conferences
+'nerd-fonts-ubuntu-monp' # Nerdfont package
 'autojump'
 )
 
@@ -42,4 +37,7 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo -e "\nDone!\n"
+echo "--------------------------------------"
+echo "--  SYSTEM READY FOR 9-post-setup   --"
+echo "--------------------------------------"
 exit

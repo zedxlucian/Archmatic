@@ -195,10 +195,10 @@ done
 
 echo -e "\nDone!\n"
 
-if [ $(whoami) = "root"  ];
+if [ "$(whoami)" = "root"  ];
 then
     [ ! -d "/home/$username" ] && useradd -m -g users -G wheel -s /bin/bash $username 
-    cp -R /root/ArchMatic /home/$username/
+    cp -R /root/ArchMatic "/home/$username/"
     echo "--------------------------------------"
     echo "--      Set Password for $username  --"
     echo "--------------------------------------"
@@ -206,11 +206,17 @@ then
     passwd $username
     cp /etc/skel/.bash_profile /home/$username/
     cp /etc/skel/.bash_logout /home/$username/
-    cp /etc/skel/.bashrc /home/$username/.bashrc
+    cp /etc/skel/.bashrc /home/$username/
     chown -R $username: /home/$username
     sed -n '#/home/'"$username"'/#,s#bash#zsh#' /etc/passwd
     su - $username
     echo "Switched to user mode"
+    echo "--------------------------------------"
+    echo "--  SYSTEM READY FOR 2-software-aur --"
+    echo "--------------------------------------"
 else
 	echo "You are already a user proceed with aur installs"
+    echo "--------------------------------------"
+    echo "--  SYSTEM READY FOR 2-software-aur --"
+    echo "--------------------------------------"
 fi
