@@ -208,7 +208,6 @@ then
     cp /etc/skel/.bash_logout /home/$username/
     cp /etc/skel/.bashrc /home/$username/
     chown -R $username: /home/$username
-    sed -n '#/home/'"$username"'/#,s#bash#zsh#' /etc/passwd
     su - $username
     echo "Switched to user mode"
     echo "--------------------------------------"

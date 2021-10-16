@@ -13,16 +13,16 @@ echo "Setting up mirrors for optimal download          "
 echo "-------------------------------------------------"
 iso=$(curl -4 ifconfig.co/country-iso)
 timedatectl set-ntp true
-pacman -S --noconfirm pacman-contrib
-pacman -S --noconfirm reflector
+pacman -S --noconfirm pacman-contrib --needed
+pacman -S --noconfirm reflector --needed
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 reflector --age 12 --country "$iso" --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
 mkdir /mnt
 
 
 echo -e "\nInstalling prereqs...\n"
-pacman -S --noconfirm gptfdisk
-pacman -S --noconfirm btrfs-progs 2>/dev/null
+pacman -S --noconfirm gptfdisk --needed
+pacman -S --noconfirm btrfs-progs --needed
 
 echo "-------------------------------------------------"
 echo "-------select your disk to format----------------"
@@ -99,7 +99,8 @@ linux /vmlinuz-linux
 initrd  /initramfs-linux.img  
 options root=${DISK}2 rw rootflags=subvol=@
 EOF
-cp -R ~/ArchMatic /mnt/root/
+
+cp -R "root/ArchMatic" "/mnt/root/"
 
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"

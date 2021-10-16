@@ -20,20 +20,19 @@ cd ~
 PKGS=(
 'brave-bin' # Brave Browser
 'dxvk-bin' # DXVK DirectX to Vulcan
-'github-desktop-bin' # Github Desktop sync
-'lightly-git'
-'lightlyshaders-git'
+# 'lightly-git'
+# 'lightlyshaders-git'
 'mangohud' # Gaming FPS Counter
 'mangohud-common'
 'ocs-url' # install packages from websites
 'timeshift-bin'
-'nerd-fonts-ubuntu-monp' # Nerdfont package
+'nerd-fonts-ubuntu-mono' # Nerdfont package
 'autojump'
 )
 
 
 for PKG in "${PKGS[@]}"; do
-    yay -S --noconfirm $PKG
+    yay -S --noconfirm $PKG --needed
 done
 
 echo -e "\nDone!\n"
