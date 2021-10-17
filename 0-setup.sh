@@ -68,10 +68,16 @@ sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /et
 #Add parallel downloading
 sed -i 's/^#Para/Para/' /etc/pacman.conf
 
+pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+pacman-key --lsign-key 3056513887B78AEB
+pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 #Enable multilib
 cat <<EOF >> /etc/pacman.conf
 [multilib]
 Include = /etc/pacman.d/mirrorlist
+
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
 EOF
 pacman -Sy --noconfirm
 
