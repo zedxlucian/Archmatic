@@ -50,7 +50,7 @@ sudo systemctl enable --now bluetooth.service
 
 echo -e "\nEnabling the cups service daemon so we can print"
 
-systemctl enable --now cups.service
+sudo systemctl enable --now cups.service
 sudo ntpd -qg
 sudo systemctl enable --now ntpd.service
 sudo systemctl disable dhcpcd.service
@@ -68,6 +68,13 @@ sudo sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
 # Replace in the same state
 cd "$pwd"
+
+sudo pacman -S python-pip
+python -m pip install konsave
+echo "export PATH="$HOME/.local/bin:$PATH"" >> ~/.bashrc
+source ~/.bashrc
+konsave -i ~/Archmatic/airim-dark.knsv
+
 echo "
 ###############################################################################
 # Done

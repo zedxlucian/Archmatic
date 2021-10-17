@@ -100,7 +100,7 @@ initrd  /initramfs-linux.img
 options root=${DISK}2 rw rootflags=subvol=@
 EOF
 
-cp -R "root/ArchMatic" "/mnt/root/"
+cp -R "root/Archmatic" "/mnt/root/"
 
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"
