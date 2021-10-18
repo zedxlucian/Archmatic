@@ -74,6 +74,7 @@ python -m pip install konsave
 [ -f "$HOME/.bashrc" ] && echo "export PATH="$HOME/.local/bin:$PATH"" >> ~/.bashrc && export PATH="$HOME/.local/bin:$PATH"
 git lfs install && git lfs pull
 tar -xf "$HOME/Archmatic/aritim-dark.tar.gz"
+mkdir "$HOME/.local/share"
 konsave -i "$HOME/Archmatic/airim-dark.knsv"
 
 echo "
