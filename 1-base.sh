@@ -212,11 +212,11 @@ then
     cp /etc/skel/.bashrc /home/$username/
     chown -R $username: /home/$username
     echo "setxkbmap fr" >> /usr/share/sddm/scripts/Xsetup
-    su - $username
     echo "Switched to user mode"
     echo "--------------------------------------"
     echo "--  SYSTEM READY FOR 2-software-aur --"
     echo "--------------------------------------"
+    su - $username
 else
 	echo "You are already a user proceed with aur installs"
     echo "--------------------------------------"
