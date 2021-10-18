@@ -69,11 +69,11 @@ sudo sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 # Replace in the same state
 cd "$pwd"
 
-sudo pacman -S python-pip
+sudo pacman -S python-pip --noconfirm --needed
 python -m pip install konsave
-echo "export PATH="$HOME/.local/bin:$PATH"" >> ~/.bashrc
-source ~/.bashrc
-konsave -i ~/Archmatic/airim-dark.knsv
+[ -f "$HOME/.bashrc" ] && echo "export PATH="$HOME/.local/bin:$PATH"" >> ~/.bashrc && source "$HOME/.bashrc"
+tar -xf "$HOME/Archmatic/aritim-dark.tar.gz"
+konsave -i "$HOME/Archmatic/airim-dark.knsv"
 
 echo "
 ###############################################################################
