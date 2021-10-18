@@ -105,6 +105,7 @@ PKGS=(
 'libksysguard'
 'libnewt'
 'libtool'
+'lightly-qt'
 'linux'
 'linux-lts'
 'linux-firmware'
