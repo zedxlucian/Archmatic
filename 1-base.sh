@@ -100,6 +100,7 @@ PKGS=(
 'kwin'
 'kwrite'
 'kwrited'
+'latte-dock'
 'layer-shell-qt'
 'libguestfs'
 'libkscreen'

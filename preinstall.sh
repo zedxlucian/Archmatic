@@ -105,6 +105,6 @@ cp -R "/root/Archmatic" "/mnt/root/"
 echo "--------------------------------------"
 echo "--   SYSTEM READY FOR 0-setup       --"
 echo "--------------------------------------"
-arch-chroot /mnt/root/Archmatic
+arch-chroot /mnt
 
 ) 2>&1 | tee installlog.txt
