@@ -53,6 +53,7 @@ PKGS=(
 'gcc'
 'gimp' # Photo editing
 'git'
+'git-lfs'
 'gparted' # partition management
 'gptfdisk'
 'groff'

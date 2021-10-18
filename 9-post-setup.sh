@@ -72,6 +72,7 @@ cd "$pwd"
 sudo pacman -S python-pip --noconfirm --needed
 python -m pip install konsave
 [ -f "$HOME/.bashrc" ] && echo "export PATH="$HOME/.local/bin:$PATH"" >> ~/.bashrc && source "$HOME/.bashrc"
+git lfs install && git lfs pull
 tar -xf "$HOME/Archmatic/aritim-dark.tar.gz"
 konsave -i "$HOME/Archmatic/airim-dark.knsv"
 
